@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Wrapper from './components/Wrapper';
 import NowWhat from './components/NowWhat';
+import Dashboard from './components/Dashboard';
+import { render } from 'react-dom';
 
 const store = createStore();
 const theme = createMuiTheme({
@@ -24,17 +26,14 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => (
-  <MuiThemeProvider theme={theme}>
-    <CssBaseline />
-    <Provider store={store}>
-      <Wrapper>
-        <Header />
-        <NowWhat />
-        <ToastContainer />
-      </Wrapper>
-    </Provider>
-  </MuiThemeProvider>
-);
+class App extends React.Component{
+  render(){
+    return(
+      <div>
+        <Dashboard />
+      </div>
+    )
+  }
+}
 
 export default App;
